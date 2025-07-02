@@ -36,10 +36,13 @@
             }
             var ctrl = L.control.iconLayers(layers,{position: 'topright'}).addTo(map);
 			
-		//	var wmsOverlay = L.tileLayer.wms('https://ows.terrestris.de/osm/service?', {
-		//		layers: 'OSM-Overlay-WMS',
-		//		opacity: 0.5,
-		//	}).addTo(map);	
+			var wmsOverlay = L.tileLayer.wms('https://maps.dwd.de/geoserver/ows?', {
+			    layers: 'dwd:Warnungen_Gemeinden',
+				transparent: true,
+				opacity: 0.8,
+				format: 'image/png',
+				attribution: 'Deutscher Wetterdienst (DWD)'
+			}).addTo(map);	
 			// Scale
 			L.control.scale().addTo(map);
 			
